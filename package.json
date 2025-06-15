@@ -1,11 +1,19 @@
 {
-    "name": "expense-manager-backend",
+    "name": "expense-manager",
     "version": "1.0.0",
-    "description": "Backend for Expense Manager application",
-    "main": "server.js",
+    "description": "Full-stack Expense Manager application",
+    "private": true,
+    "workspaces": [
+        "backend",
+        "frontend"
+    ],
     "scripts": {
         "start": "node server.js",
-        "dev": "nodemon server.js"
+        "dev": "nodemon server.js",
+        "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install"
+    },
+    "engines": {
+        "node": ">=14.0.0"
     },
     "dependencies": {
         "bcryptjs": "^2.4.3",
