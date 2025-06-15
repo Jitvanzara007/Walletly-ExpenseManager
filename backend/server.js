@@ -31,8 +31,9 @@ const app = express();
 const allowedOrigins = [
     'http://localhost:3000',
     'http://localhost:5173',
-    'https://expense-manager-production.up.railway.app',
-    'https://expense-manager-frontend-production.up.railway.app'
+    'https://walletly-expensemanager-production.up.railway.app',
+    'https://walletly.up.railway.app',
+    'https://walletly-expensemanager.up.railway.app'
 ];
 
 app.use(cors({
