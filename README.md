@@ -85,29 +85,6 @@ The application will be available at:
 
 ## Project Structure
 
-```
-expense-manager/
-├── frontend/               # React frontend
-│   ├── public/            # Static files
-│   ├── src/              # Source files
-│   │   ├── components/   # React components
-│   │   ├── pages/       # Page components
-│   │   ├── redux/       # Redux store and actions
-│   │   ├── services/    # API services
-│   │   └── utils/       # Utility functions
-│   └── package.json
-│
-├── backend/              # Node.js backend
-│   ├── config/          # Configuration files
-│   ├── controllers/     # Route controllers
-│   ├── middleware/      # Custom middleware
-│   ├── models/          # Mongoose models
-│   ├── routes/          # API routes
-│   ├── utils/           # Utility functions
-│   └── package.json
-│
-└── README.md
-```
 
 ## API Endpoints
 
