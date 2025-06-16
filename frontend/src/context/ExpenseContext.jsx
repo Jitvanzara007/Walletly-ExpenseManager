@@ -2,10 +2,11 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import config from '../config';
 
 // Create axios instance with default config
 const api = axios.create({
-    baseURL: 'http://localhost:5000/api',
+    baseURL: `${config.API_URL}/api`,
     withCredentials: true,
     headers: {
         'Content-Type': 'application/json',

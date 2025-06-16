@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import config from '../config';
 
 const AuthContext = createContext(null);
 
@@ -66,7 +67,7 @@ export const AuthProvider = ({ children }) => {
                     return;
                 }
 
-                const response = await axios.get('http://localhost:5000/api/auth/me', {
+                const response = await axios.get(`${config.API_URL}/api/auth/me`, {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
@@ -93,7 +94,7 @@ export const AuthProvider = ({ children }) => {
     const login = async (email, password) => {
         try {
             setLoading(true);
-            const response = await axios.post('http://localhost:5000/api/auth/login', {
+            const response = await axios.post(`${config.API_URL}/api/auth/login`, {
                 email,
                 password
             });
@@ -130,7 +131,7 @@ export const AuthProvider = ({ children }) => {
 
     const register = async (userData) => {
         try {
-            const response = await axios.post('http://localhost:5000/api/auth/register', userData);
+            const response = await axios.post(`${config.API_URL}/api/auth/register`, userData);
             const { token, user } = response.data;
             localStorage.setItem('token', token);
             axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;

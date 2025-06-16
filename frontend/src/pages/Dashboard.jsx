@@ -27,6 +27,7 @@ import {
 import { Line, Doughnut } from 'react-chartjs-2';
 import { FaWallet as FaWalletIcon, FaExchangeAlt, FaCalendarAlt } from 'react-icons/fa';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
+import config from '../config';
 
 // Register ChartJS components and the datalabels plugin
 ChartJS.register(
@@ -100,7 +101,7 @@ const Dashboard = () => {
       }
 
       console.log('Sending force reset request...');
-      const response = await fetch('http://localhost:5000/api/expenses/force-reset', {
+      const response = await fetch(`${config.API_URL}/api/expenses/force-reset`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -40,6 +40,7 @@ import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
 import { useExpense } from '../context/ExpenseContext';
 import { useNavigate } from 'react-router-dom';
+import config from '../config';
 
 // Available currencies with their symbols and names
 const CURRENCIES = {
@@ -129,7 +130,7 @@ const Settings = () => {
         username: editProfileData.username
       };
 
-      const response = await axios.put('http://localhost:5000/api/auth/profile', updateData, {
+      const response = await axios.put(`${config.API_URL}/api/auth/profile`, updateData, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
           'Content-Type': 'application/json'
