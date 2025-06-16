@@ -31,7 +31,7 @@ const app = express();
 const allowedOrigins = [
     'http://localhost:3000',
     'http://localhost:5173',
-    'https://walletly-expensemanager.onrender.com',
+    'https://walletly-expensemanager.onrender.com/',
     'https://walletly.onrender.com'
 ];
 
@@ -77,6 +77,20 @@ const expenseRoutes = require('./routes/expenses');
 // Register routes
 console.log('Registering routes...');
 console.log('=================================');
+
+// Root route
+app.get('/', (req, res) => {
+    res.json({
+        message: 'Welcome to Walletly Expense Manager API',
+        status: 'active',
+        version: '1.0.0',
+        endpoints: {
+            auth: '/api/auth',
+            expenses: '/api/expenses',
+            health: '/health'
+        }
+    });
+});
 
 // Health check route
 app.get('/health', (req, res) => {
