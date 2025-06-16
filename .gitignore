@@ -1,5 +1,3 @@
-
-
 # OS
 .DS_Store
 Thumbs.db
@@ -106,3 +104,7 @@ data/db/
 .vercel
 .turbo
 storybook-static/
+
+# Database
+*.sqlite3
+*.db
